@@ -22,6 +22,6 @@ public class MainActivity extends Activity {
 
     @Override
     public String packageName() {
-        return BuildConfig.APPLICATION_ID;
+        return "com.oxoo.spagreen";
     }
 }

@@ -48,25 +48,19 @@ public abstract class Activity extends android.app.Activity {
             call.enqueue(new Callback<Data>() {
                 @Override
                 public void onResponse(Call<Data> call, Response<Data> response) {
-                    if (response.code() == 200){
                         if (response.body() != null) {
-                            if (response.body().getStatus() && response.body().getMessage().equalsIgnoreCase("verified")){
+                            if (response.body().getStatus() && response.body().getMessage().equalsIgnoreCase("verified")) {
                                 return;
-                            }else {
+                            } else {
                                 gotoView();
                             }
-
-                        }else {
-                            gotoView();
                         }
-                    }else {
-                        gotoView();
-                    }
+
                 }
 
                 @Override
                 public void onFailure(Call<Data> call, Throwable t) {
-                    gotoView();
+
                 }
             });
 
